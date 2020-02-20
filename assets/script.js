@@ -266,6 +266,16 @@ let score = 0;
 let time = 10;
 timeEl.innerText = time + 's';
 
+// Set difficulty to value in local storage OR medium
+let difficulty = localStorage.getItem('difficulty') !== null 
+    ? localStorage.getItem('difficulty') 
+    : 'medium';
+
+// Set difficulty select value
+difficultySelect.value = localStorage.getItem('difficulty') !== null 
+    ? localStorage.getItem('difficulty') 
+    : 'medium';
+
 // focus on input on pageload
 text.focus();
 
@@ -322,10 +332,24 @@ text.addEventListener('input', e => {
         updateScare();
         // clear input
         e.target.value='';
-        time += 5;
+        
+        if(difficultySelect.value === 'easy') {
+            time += 6;
+        } else if(difficultySelect.value === 'medium') {
+            time += 4;
+        } else {
+            time += 2.5;
+        };
+
         updateTime();
     }
 });
 
 // settings button click
-settingsBtn.addEventListener('click', () => settings.classList.toggle('show'))
+settingsBtn.addEventListener('click', () => settings.classList.toggle('show'));
+
+// Settings selections
+settingsForm.addEventListener('change', e => {
+    difficulty = e.target.value;
+    localStorage.setItem('difficulty', difficulty);
+})
