@@ -3,7 +3,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
-    color: #2f0d74 !important;
+    color: #2a0b68 !important;
 }
 
 body {
@@ -155,7 +155,7 @@ input:focus {
     font-weight: normal;
 }
 
-.end-game {
+.end-game-container {
     background-color: inherit;
     display: none;
     align-items: center;
