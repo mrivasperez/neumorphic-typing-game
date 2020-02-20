@@ -39,6 +39,7 @@ select {
     box-shadow: inset -5px -5px 10px #acb2cb, 
                 inset 5px 5px 10px #d6defd;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 select:hover {
@@ -74,14 +75,14 @@ select:focus, button:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(0);
-    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+    transition: transform 0.7s ease-in-out;
     box-shadow:  inset -9px -9px 18px #979cb2;
     padding: 50px 0;
     color: black;
 }
-.settings.hide {
-    transform: translateY(-100%);
+.settings.show {
+    transform: translateY(0);
 }
 
 .container {
@@ -112,7 +113,8 @@ h2 {
 input {
     font-style: inherit;
     font-weight: normal;
-    margin: 25px 0;
+    margin-top: 27px;
+    margin-bottom: 25px;
     border-radius: 50px;
     background: #c1c8e4;
     box-shadow:  5px 5px 10px #a4aac2, 
@@ -162,10 +164,12 @@ input:focus {
     justify-content: center;
     flex-direction: column;
     position: absolute;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
+    border-radius: 50px;
 }
 
 .settings-btn {
@@ -187,12 +191,44 @@ input:focus {
 background: linear-gradient(145deg, #cfd6f4, #aeb4cd);
 box-shadow:  6px 6px 12px #868999, 
              -6px -6px 12px #dee6ff;
-             transition: 1s ease;
 }
 
-.settings-btn:focus {
+.settings-btn:active {
     border-radius: 150px;
 background: #868999, ;
 box-shadow: inset 6px 6px 12px #a4aac2, 
             inset -6px -6px 12px #dee6ff;
+}
+
+
+.reload-btn {
+    margin: 25px 0;
+    border-radius: 50px;
+    background: #c1c8e4;
+    box-shadow:  5px 5px 10px #a4aac2, 
+                 -5px -5px 10px #dee6ff;
+    border: none;
+    font-size: 14px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: 0.33s ease-in-out;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.reload-btn:hover {
+    background: linear-gradient(145deg, #cfd6f4, #aeb4cd);
+box-shadow:  6px 6px 12px #868999, 
+             -6px -6px 12px #dee6ff;
+             transition: 1s ease;
+}
+
+.reload-btn:focus {
+    background: #868999, ;
+    box-shadow: inset 6px 6px 12px #a4aac2, 
+                inset -6px -6px 12px #dee6ff;
+}
+
+p.time-container {
+    margin-bottom: 2px;
 }

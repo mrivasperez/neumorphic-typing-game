@@ -304,15 +304,17 @@ function updateTime() {
 // game over, so show endscreen
 function gameOver() {
     endgameEl.innerHTML = `
-    <h1>Your time has ran out.</h1>
+    <h1 style="font-family: 'VT323', monospace; font-size: 250%;     text-shadow: 2px 2px 8px rgba(63, 63, 63, 0.616); margin-top: 33px;">Your time has ran out!</h1>
     <p>Your final score is ${score}</p>
-    <button class="reload-btn" onclick="location.reload()">Reload</button>
+    <button class="reload-btn" onclick="location.reload()"><i class="fas fa-redo"></i> &nbsp;&nbsp;&nbsp;Reload</button>
     `;
+
+    endgameEl.style.display = 'flex';
 }
 
 
 addWordToDOM();
-
+// typing event
 text.addEventListener('input', e => {
     const insertedText = e.target.value;
     if (insertedText === randomWord) {
@@ -320,5 +322,10 @@ text.addEventListener('input', e => {
         updateScare();
         // clear input
         e.target.value='';
+        time += 5;
+        updateTime();
     }
 });
+
+// settings button click
+settingsBtn.addEventListener('click', () => settings.classList.toggle('show'))
