@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|VT323&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: #c1c8e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    font-size: 14px;
+}
+
+button {
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 5px 15px;
+}
+
+select {
+    width: 200px;
+    padding: 10px 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 50px;
+    background: #c1c8e4;
+    box-shadow: inset -5px -5px 10px #acb2cb, 
+                inset 5px 5px 10px #d6defd;
+    margin-left: 10px;
+}
+
+select:hover {
+    box-shadow: inset -1px -10px 30px #acb2cb, 
+                inset 10px 10px 30px #d6defd;
+                transition: .3s ease-in-out;
+}
+
+select:focus {
+    background: #c1c8e4;
+    box-shadow: inset -20px -20px 30px #acb2cb, 
+                inset 20px 20px 30px #d6defd;
+                transition: .3s ease-in-out;
+}
+
+select:focus, button:focus {
+    outline: none;
+}
+
+.settings-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.settings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #c1c8e4;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+    box-shadow:  inset -9px -9px 18px #979cb2;
+    padding: 50px 0;
+    color: black;
+}
+.settings.hide {
+    transform: translateY(-100%);
+}
+
+.container {
+    padding: 50px;
+    border-radius: 50px;
+    background: #c1c8e4;
+    box-shadow:  50px 50px 100px #a4aac2, 
+                 -50px -50px 100px #dee6ff;
+    color: rgb(29, 29, 29);
+    position: relative;
+    text-align: center;
+    width: 500px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    font-family: 'VT323', monospace;
+    font-size: 400%;
+    margin: 0;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(63, 63, 63, 0.616);
+}
+
+input {
+    font-style: inherit;
+    font-weight: normal;
+    margin: 25px 0;
+    border-radius: 50px;
+    background: #c1c8e4;
+    box-shadow:  5px 5px 10px #a4aac2, 
+                 -5px -5px 10px #dee6ff;
+    border: none;
+    font-size: 14px;
+    width: 300px;
+    padding: 12px 20px;
+    cursor: default;
+    transition: 0.33s ease-in-out;
+}
+
+input:hover {
+    border-radius: 50px;
+    background: #c1c8e4;
+    box-shadow:  7px 7px 14px #a4aac2, 
+                 -7px -7px 14px #dee6ff;
+    transition: 0.3s ease-in-out;
+}
+
+input:focus {
+    border-radius: 50px;
+    background: #c1c8e4;
+    box-shadow:  16px 16px 32px #a4aac2, 
+                 -16px -16px 32px #dee6ff;
+    color: black;
+    outline: none;
+    transition: 0.4s ease-in-out;
+}
+
+.score-container {
+    position: absolute;
+    top: 90px;
+    right: 20px;
+}
+
+.time-container {
+    text-align: center;
+    align-items: center;
+    font-weight: normal;
+}
+
+.end-game {
+    background-color: inherit;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.settings-btn {
+    border-radius: 150px;
+    background: linear-gradient(145deg, #aeb4cd, #cfd6f4);
+    box-shadow:  6px 6px 12px #a4aac2, 
+                 -6px -6px 12px #dee6ff;
+    height: 61px;
+    width: 61px;
+    border: 0;
+    font-size: 20px;
+    color: rgb(17, 17, 17);
+    transition: 0.3s ease-in-out;
+    text-shadow: 2px 2px 8px rgba(63, 63, 63, 0.322);
+}
+
+.settings-btn:hover {
+    border-radius: 150px;
+background: linear-gradient(145deg, #cfd6f4, #aeb4cd);
+box-shadow:  6px 6px 12px #868999, 
+             -6px -6px 12px #dee6ff;
+             transition: 1s ease 1s;
+}
+
+.settings-btn:focus {
+    border-radius: 150px;
+background: #9ea4be;
+box-shadow: inset 6px 6px 12px #a4aac2, 
+            inset -6px -6px 12px #dee6ff;
+}
